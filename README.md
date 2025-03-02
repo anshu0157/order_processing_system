@@ -13,7 +13,7 @@ This project implements a backend system for managing and processing orders in a
 - **Backend**: Django REST Framework (DRF)
 - **Database**: SQLite (default in DRF)
 - **Queue**: Python `queue.Queue` (in-memory)
-- **Deployment**: AWS EC2 (optional)
+- **Deployment**: Render (optional)
 
 ---
 
@@ -108,12 +108,12 @@ GET /api/orders/metrics/
 ```sh
 curl -X POST http://127.0.0.1:8000/orders/ \
      -H "Content-Type: application/json" \
-     -d '{"user_id": 1, "item_ids": [101, 102], "total_amount": 250.75}'
+     -d '{"user_id": 99, "item_ids": [101, 102], "total_amount": 250.75}'
 ```
 
 ### Check Order Status (Postman)
 1. Open Postman
-2. Make a **GET** request to `http://127.0.0.1:8000/orders/1/status/`
+2. Make a **GET** request to `http://127.0.0.1:8000/orders/123/status/`
 
 ### Check Order metrics (Postman)
 1. Open Postman
@@ -141,11 +141,8 @@ Orders are processed asynchronously using an **in-memory queue**. The worker pul
 
 ---
 
-## Deployment (Optional)
-### Deploy on AWS EC2
-1. Push code to GitHub.
-
----
+## Puplic API Endpoint
+🔗 **Public Api Link:** [Render - Order Processing System](https://order-processing-system-mzkq.onrender.com/orders/)
 
 ## GitHub Repository
 🔗 **Repository Link:** [GitHub - Order Processing System](https://github.com/anshu0157/order_processing_system)
